@@ -18,14 +18,9 @@
 # include <math.h>
 # define SIZE1 800
 # define SIZE2 800
-# define ESC 53
-# define UP 126
-# define DOWN 125
-# define LEFT 123
-# define RIGHT 124
+# define ESC 41
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
-# define SCALE 0.9
 
 typedef struct s_fractal
 {
@@ -36,9 +31,12 @@ typedef struct s_fractal
     double  zi;
     double  cr;
     double  ci;
-    int     range;
+    double  xm;
+    double  ym;
+    double     range;
     char    *name;
     int     max;
+    void (*render_func)();
 }   t_fractal;
 
 void    init(t_fractal *fractal);
@@ -51,6 +49,10 @@ void    which_fractal(t_fractal *fractal);
 void    result(t_fractal *fractal, void (*fract)());
 void    draw(t_fractal fractal, int repeat, double x, double y);
 int     num_rep(t_fractal *fractal);
-
+void    julia(t_fractal *fractal, double x, double y);
+void	zoom(t_fractal *fractal);
+void	unzoom(t_fractal *fractal);
+int     scroll_hook(int key, void *fractal);
+double   ft_atod(const char *nptr);
 
 # endif

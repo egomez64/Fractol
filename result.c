@@ -3,9 +3,15 @@
 void    which_fractal(t_fractal *fractal)
 {
     if (ft_strncmp(fractal->name, "Mandelbrot", 11) == 0)
-        result(fractal, mandelbrot);
-    /*else if (ft_strncmp(fractal->name, "Julia", 5) == 0)
-        result(fractal, julia());*/
+    {
+            fractal->render_func = mandelbrot;
+        result(fractal, fractal->render_func);
+    }
+    else if (ft_strncmp(fractal->name, "Julia", 5) == 0)
+    {
+        fractal->render_func = julia;
+        result(fractal, fractal->render_func);
+    }
 }
 
 int num_rep(t_fractal *fractal)

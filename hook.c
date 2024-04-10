@@ -14,7 +14,7 @@
 
 int key_hook(int key, void *mlx)
 {
-    if (key == 41)
+    if (key == ESC)
         mlx_loop_end(mlx);
     return (0);
 }
@@ -23,5 +23,20 @@ int window_hook(int key, void *mlx)
 {
     if (key == 0)
         mlx_loop_end(mlx);
+    return (0);
+}
+
+int scroll_hook(int key, void *fractal)
+{
+    if (key == 1)
+    {
+        write(1, "zoom\n", 5);
+        zoom(fractal);
+    }
+    else if (key == 2)
+    {
+        write(1, "dezoom\n", 7);
+        unzoom(fractal);
+    }
     return (0);
 }

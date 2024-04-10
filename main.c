@@ -19,6 +19,11 @@ int	main(int argc, char **argv)
 		write(1, "Veuillez entrer un nom valable parmis : Mandelbrot et Julia\n", 70);
 		exit(EXIT_FAILURE);
 	}
+	if (ft_strncmp(argv[1], "Julia", 5) == 0 && argc < 4)
+	{
+		write(1, "Veuillez entrer les constantes pour l'ensemble de Julia\n", 70);
+		exit(EXIT_FAILURE);
+	}
 	t_fractal	fractal;
 	init(&fractal);
 	mlx_put_image_to_window(fractal.mlx, fractal.win, fractal.img, 0, 0);
@@ -27,6 +32,7 @@ int	main(int argc, char **argv)
 	mlx_set_fps_goal(fractal.mlx, 30);
 	mlx_on_event(fractal.mlx, fractal.win, MLX_KEYDOWN, key_hook, fractal.mlx);
 	mlx_on_event(fractal.mlx, fractal.win, MLX_WINDOW_EVENT, window_hook, fractal.mlx);
+	mlx_on_event(fractal.mlx, fractal.win, MLX_MOUSEWHEEL, scroll_hook, &fractal);
 	mlx_loop(fractal.mlx);
 	mlx_destroy_window(fractal.mlx, fractal.win);
 	mlx_destroy_display(fractal.mlx);
