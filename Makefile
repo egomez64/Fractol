@@ -6,7 +6,7 @@ MACROLIBX = MacroLibX/libmlx.so
 
 CC = cc
 
-SRCS = main.c init.c hook.c result.c events.c ft_atod.c
+SRCS = main.c init.c hook.c result.c events.c ft_atod.c color.c
 
 HEADERS = fractol.h
 

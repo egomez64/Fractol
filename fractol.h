@@ -54,5 +54,6 @@ void	zoom(t_fractal *fractal);
 void	unzoom(t_fractal *fractal);
 int     scroll_hook(int key, void *fractal);
 double   ft_atod(const char *nptr);
+int    get_color(int iter);
 
 # endif

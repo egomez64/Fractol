@@ -19,7 +19,7 @@ void    init(t_fractal *fractal)
     fractal->win = mlx_new_window(fractal->mlx, SIZE1, SIZE2, "fractol");
     fractal->img = mlx_new_image(fractal->mlx, SIZE1, SIZE2);
     fractal->range = 2;
-    fractal->max = 42;
+    fractal->max = 300;
     fractal->xm = 0;
     fractal->ym = 0;
 }

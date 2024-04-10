@@ -35,9 +35,13 @@ int num_rep(t_fractal *fractal)
 void    draw(t_fractal fractal, int repeat, double x, double y)
 {
     if (repeat > 0)
-        mlx_set_image_pixel(fractal.mlx, fractal.img, x, y, 0xFFFFFFFF);
+    {
+        #include <stdio.h>
+        //printf("color: %d       repeat: %d\n", get_color(repeat), repeat);
+        mlx_set_image_pixel(fractal.mlx, fractal.img, x, y, get_color(repeat));
+    }
     else
-        mlx_set_image_pixel(fractal.mlx, fractal.img, x, y, 0xFF000000);
+        mlx_set_image_pixel(fractal.mlx, fractal.img, x, y, 0x000000);
 }
 
 void    result(t_fractal *fractal, void (*fract)())
