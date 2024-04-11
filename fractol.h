@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include "MacroLibX/includes/mlx.h"
 # include <math.h>
 # define SIZE1 800
@@ -24,36 +25,36 @@
 
 typedef struct s_fractal
 {
-    void    *mlx;
-    void    *win;
-    void    *img;
-    double  zr;
-    double  zi;
-    double  cr;
-    double  ci;
-    double  xm;
-    double  ym;
-    double     range;
-    char    *name;
-    int     max;
-    void (*render_func)();
-}   t_fractal;
+	void	*mlx;
+	void	*win;
+	void	*img;
+	double	zr;
+	double	zi;
+	double	cr;
+	double	ci;
+	double	xm;
+	double	ym;
+	double	range;
+	char	*name;
+	int		max;
+	void	(*render_func)();
+}	t_fractal;
 
-void    init(t_fractal *fractal);
-int     key_hook(int key, void *mlx);
-int     window_hook(int key, void *mlx);
-void    name(t_fractal *fractal, char **argv);
-void    mandelbrot(t_fractal *fractal, double x, double y);
+void	init(t_fractal *fractal);
+int		key_hook(int key, void *mlx);
+int		window_hook(int key, void *mlx);
+void	name(t_fractal *fractal, char **argv);
+void	mandelbrot(t_fractal *fractal, double x, double y);
 double	map(float r1[2], float r2[2], float val);
-void    which_fractal(t_fractal *fractal);
-void    result(t_fractal *fractal, void (*fract)());
-void    draw(t_fractal fractal, int repeat, double x, double y);
-int     num_rep(t_fractal *fractal);
-void    julia(t_fractal *fractal, double x, double y);
+void	which_fractal(t_fractal *fractal);
+void	result(t_fractal *fractal, void (*fract)());
+void	draw(t_fractal fractal, int repeat, double x, double y);
+int		num_rep(t_fractal *fractal);
+void	julia(t_fractal *fractal, double x, double y);
 void	zoom(t_fractal *fractal);
 void	unzoom(t_fractal *fractal);
-int     scroll_hook(int key, void *fractal);
-double   ft_atod(const char *nptr);
-int    get_color(int iter);
+int		scroll_hook(int key, void *fractal);
+double	ft_atod(const char *nptr);
+int		get_color(int iter);
 
-# endif
+#endif
