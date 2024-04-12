@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	mlx_on_event(fractal.mlx, fractal.win, MLX_MOUSEWHEEL,
 		scroll_hook, &fractal);
 	mlx_loop(fractal.mlx);
+	mlx_destroy_image(fractal.mlx, fractal.img);
 	mlx_destroy_window(fractal.mlx, fractal.win);
 	mlx_destroy_display(fractal.mlx);
 	return (0);

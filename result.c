@@ -61,10 +61,10 @@ void	result(t_fractal *fractal, void (*fract)())
 	int		repeat;
 
 	x = 0;
-	while (x <= SIZE1)
+	while (x < SIZE1)
 	{
 		y = 0;
-		while (y <= SIZE2)
+		while (y < SIZE2)
 		{
 			fract(fractal, x, y);
 			repeat = num_rep(fractal);

@@ -45,7 +45,7 @@ clean:
 	rm -f $(OBJS)
 	@make -C libft/ clean
 	@make -C MacroLibX/ clean
-	@make -C printf/clean
+	@make -C ft_printf/ clean
 	
 fclean: clean
 	rm -f $(NAME)
